@@ -1,8 +1,7 @@
-execute pathogen#infect()
 "Turn on syntax highlighting
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme slate
 filetype plugin indent on
 
 "Don't wrap lines
@@ -78,6 +77,12 @@ set list!
 
 " let g:syntastic_jsx_checkers = ['jsxhint']
 let g:syntastic_javascript_checkers = ['standard']
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 
 let @l='iconsole.log("--------------------1");'
