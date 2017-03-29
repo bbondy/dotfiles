@@ -5,6 +5,7 @@
 !.gitignore
 !.vimrc
 !.gitconfig
+!.tmux.conf
 !LICENSE
 
 # ...even if they are in subdirectories
