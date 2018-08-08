@@ -87,4 +87,7 @@ imap <C-v> <ESC>"+pa
 
 let @l='iconsole.log("--------------------1");'
 
+execute pathogen#infect()
+syntax on
+
 autocmd FileType go setlocal ts=2 sts=2 sw=2 noexpandtab
