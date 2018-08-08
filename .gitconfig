@@ -2,9 +2,6 @@
 [user]
 	name = Brian R. Bondy
 	email = netzen@gmail.com
-[user]
-	name = Brian R. Bondy
-	email = netzen@gmail.com
 [push]
 	default = current
 [alias]
@@ -13,5 +10,5 @@
 	su = git submodule update --init --recursive
 	tags = git log --tags --simplify-by-decoration --pretty="format:%ai %d"
 	unstage = reset --
-[commit]
-	gpgsign = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
