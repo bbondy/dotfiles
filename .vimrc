@@ -87,6 +87,9 @@ imap <C-v> <ESC>"+pa
 
 let @l='iconsole.log("--------------------1");'
 
+" To install this:
+" mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+" curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 execute pathogen#infect()
 syntax on
 
