@@ -13,6 +13,12 @@
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [secrets]
+# These are generated from:
+# git clone git@github.com:awslabs/git-secrets.git
+# git-secrets --register-aws --global
+#
+# Manually scan with:
+# git-secrets --scan -r .
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
 	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
@@ -20,4 +26,8 @@
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [init]
+# To init, run this:
+# git secrets --install
+# git secrets --install ~/.git-templates/git-secrets
+# git init --template ~/.git-templates/git-secrets
 	templateDir = /Users/bbondy/.git-templates/git-secrets
