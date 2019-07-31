@@ -29,7 +29,7 @@ alias bn="npm run build -- --no_branding_update"
 # Clean profile
 alias clp="rm -Rf ~/Library/Application\ Support/brave-development && rm -Rf ~/Library/Application\ Support/BraveSoftware/Brave-Browser-Development"
 
-export PATH="$PATH:/Users/bbondy/projects/brave/depot_tools"
+export PATH="$PATH:/Users/bbondy/projects/brave/depot_tools:/Users/bbondy/bin"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
