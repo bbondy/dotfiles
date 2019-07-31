@@ -6,11 +6,8 @@ export NVM_DIR="$HOME/.nvm"
     echo "$@" | bc
 }
 
-#Updaet patches
+# Update patches
 alias up="npm run sync -- --run_hooks"
-
-# Build muon
-alias bm="npm run build -- --debug_build=true --official_build=false --muon"
 
 # Create dist
 alias c="npm run create_dist -- --debug_build=true --official_build=false"
