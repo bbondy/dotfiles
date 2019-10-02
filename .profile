@@ -33,6 +33,16 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias rut="npm run test brave_unit_tests"
 alias rbt="npm run test brave_browser_tests"
 
+alias iax86="npm run init -- --target_os=android --target_arch=x86"
+alias ia="npm run init -- --target_os=android --target_arch=arm"
+alias ba="npm run build -- --target_os=android --target_arch=arm"
+alias bax86="npm run build -- --target_os=android --target_arch=x86"
+alias da="./build/android/adb_install_apk.py out/android_Debug_arm/apks/Bravearm.apk"
+alias ta="npm run test -- brave_unit_tests --target_os=android --target_arch=arm"
+alias tax86="npm run test -- brave_unit_tests --target_os=android --target_arch=x86"
+alias android-monitor="third_party/android_tools/sdk/tools/monitor"
+alias avdmanager="third_party/android_tools/sdk/tools/bin/avdmanager"
+alias android-studio="/usr/local/android-studio/bin/studio.sh"
 
 # disk cache
 export SCCACHE_CACHE_SIZE=100G     # some of us use 100GB; you can use less if needed
