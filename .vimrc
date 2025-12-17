@@ -94,3 +94,7 @@ execute pathogen#infect()
 syntax on
 
 autocmd FileType go setlocal ts=2 sts=2 sw=2 noexpandtab
+
+" Ensure files end with a newline
+set eof
+set fixendofline
