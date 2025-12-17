@@ -129,3 +129,13 @@ command! RmPatch call RmPatch()
 
 " Key mapping (\r)
 nnoremap <leader>r :RmPatch<CR>
+
+
+" Bright blue line numbers
+highlight LineNr ctermfg=14 guifg=#00AFFF guibg=NONE
+
+" Even brighter blue for the current line number
+highlight CursorLineNr ctermfg=12 guifg=#3399FF guibg=NONE
+
+" Optional: make the sign column match
+highlight SignColumn ctermfg=14 guifg=#00AFFF guibg=NONE
