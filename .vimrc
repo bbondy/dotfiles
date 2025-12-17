@@ -98,3 +98,34 @@ autocmd FileType go setlocal ts=2 sts=2 sw=2 noexpandtab
 " Ensure files end with a newline
 set eof
 set fixendofline
+
+function! RmPatch()
+  " Save cursor position in mark z
+  execute "normal! mz"
+
+  " Find start of current patch; default to line 1
+  let l:start = search('^diff --git', 'bW')
+  if l:start == 0
+    let l:start = 1
+  endif
+
+  " Find start of next patch; default to end of file +1
+  let l:end = search('^diff --git', 'nW')
+  if l:end == 0
+    let l:end = line('$') + 1
+  endif
+
+  " Delete lines from start to one before next patch
+  execute l:start . ',' . (l:end - 1) . 'delete'
+
+  " Jump back to saved mark if still valid
+  if line("'z") > 0
+    execute "normal! 'z"
+  endif
+endfunction
+
+" Command
+command! RmPatch call RmPatch()
+
+" Key mapping (\r)
+nnoremap <leader>r :RmPatch<CR>
