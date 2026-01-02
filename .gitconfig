@@ -10,6 +10,11 @@
 	su = git submodule update --init --recursive
 	tags = git log --tags --simplify-by-decoration --pretty="format:%ai %d"
 	unstage = reset --
+	diffbase = diff origin/HEAD...
+	amendnv = commit --amend --no-verify
+	amendlast = !git add . && git commit --amend --no-verify --no-edit
+	famendlast = !npm run format && git add . && git commit --amend --no-verify --no-edit
+	recent-branches = for-each-ref --sort=-creatordate --format=\"%(refname:short) - %(creatordate)\" refs/heads/
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [secrets]
