@@ -2,6 +2,7 @@
 [user]
 	name = Brian R. Bondy
 	email = netzen@gmail.com
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA+/e6afaOJNyixcJbnPQYNbcOl4NGr9xqnJAGlbKoT7KlSwiZcZXMVVcOWMBl7DGjM1iua16AOHkKRKmM035dwthbrCThka4BOTZvi7WVPyOmrx5g0QthHzrsEmoUJMOK7RHBxBgkDwPprWuEizqDoUP5Xbac/c05qOa8hFc5r+trAzWm8QdBbXq0IoKPHzNN6fdCSpWsNqPKAen6d6WKQn4tFzawym0L+Y2aUcCMAck+FV59Yh7vEAkfrPGPyHm7QUcgBCQ4HGHgCx8rQ96fP8RJW21aoQ5cnnfR1AbVRmYpKEVlCyMDrIIxacx1Kq2+uYwaXyVV6SNjN0fUmRSXMQ== netzen@gmail.com
 [push]
 	default = current
 [alias]
@@ -35,4 +36,12 @@
 # git secrets --install
 # git secrets --install ~/.git-templates/git-secrets
 # git init --template ~/.git-templates/git-secrets
-	templateDir = /Users/bbondy/.git-templates/git-secrets
+	templateDir =  $HOME/.git-templates/git-secrets
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	format = ssh
+	program = gpg
+
