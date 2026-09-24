@@ -13,8 +13,8 @@
 	unstage = reset --
 	diffbase = diff origin/HEAD...
 	amendnv = commit --amend --no-verify
-	amendlast = !git add . && git commit --amend --no-verify --no-edit
-	famendlast = !npm run format && git add . && git commit --amend --no-verify --no-edit
+	amendlast = !git add -u && git commit --amend --no-verify --no-edit
+	famendlast = !pnpm run format && git add . && git commit --amend --no-verify --no-edit
 	recent-branches = for-each-ref --sort=-creatordate --format=\"%(refname:short) - %(creatordate)\" refs/heads/
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
@@ -36,7 +36,7 @@
 # git secrets --install
 # git secrets --install ~/.git-templates/git-secrets
 # git init --template ~/.git-templates/git-secrets
-	templateDir =  $HOME/.git-templates/git-secrets
+	templateDir = ~/.git-templates/git-secrets
 [commit]
 	gpgsign = true
 [tag]
@@ -44,4 +44,6 @@
 [gpg]
 	format = ssh
 	program = gpg
+[include]
+	path = ~/.gitconfig.local
 

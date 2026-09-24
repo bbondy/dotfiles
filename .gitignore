@@ -9,6 +9,7 @@
 !.gitconfig
 !.tmux.conf
 !LICENSE
+!setup.sh
 
 # ...even if they are in subdirectories
 */

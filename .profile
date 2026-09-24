@@ -1,3 +1,14 @@
+# Stops recursion: this and ~/.bashrc source each other
+[ -n "${_DOTFILES_PROFILE:-}" ] && return
+_DOTFILES_PROFILE=1
+
+# Login bash doesn't read ~/.bashrc, so load it unless it's what sourced this
+if [ -n "$BASH_VERSION" ] && [ -f ~/.bashrc ]; then
+    case " ${BASH_SOURCE[*]} " in
+        *"/.bashrc "*) ;;
+        *) . ~/.bashrc ;;
+    esac
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -89,7 +100,10 @@ export RBE_local_resource_fraction=0.5
 
 # zsh completion is set up in .zshrc
 if [ -n "$BASH_VERSION" ] && [[ $- == *i* ]]; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
+    # Ubuntu's default ~/.bashrc may have loaded it already
+    if [ -n "${BASH_COMPLETION_VERSINFO:-}" ]; then
+        :
+    elif [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
     elif [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
@@ -104,3 +118,4 @@ fi
 
 # Machine-specific/private config, not in the public repo
 [ -f ~/.profile.local ] && . ~/.profile.local
+unset _DOTFILES_PROFILE

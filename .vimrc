@@ -140,3 +140,5 @@ highlight CursorLineNr ctermfg=12 guifg=#3399FF guibg=NONE
 " Optional: make the sign column match
 highlight SignColumn ctermfg=14 guifg=#00AFFF guibg=NONE
 autocmd BufNewFile,BufRead *.mojom set ft=cpp
+
+if filereadable(expand('~/.vimrc.local')) | source ~/.vimrc.local | endif
