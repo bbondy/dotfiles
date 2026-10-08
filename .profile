@@ -116,6 +116,15 @@ if [ -n "$BASH_VERSION" ] && [[ $- == *i* ]]; then
     fi
 fi
 
+# bravebot shell integration (only if bravebot is installed)
+if [[ $- == *i* ]] && command -v bravebot >/dev/null 2>&1; then
+    if [ -n "$ZSH_VERSION" ]; then
+        eval "$(bravebot shell-init zsh)"
+    elif [ -n "$BASH_VERSION" ]; then
+        eval "$(bravebot shell-init bash)"
+    fi
+fi
+
 # Machine-specific/private config, not in the public repo
 [ -f ~/.profile.local ] && . ~/.profile.local
 unset _DOTFILES_PROFILE
